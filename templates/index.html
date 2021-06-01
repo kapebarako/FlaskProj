@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+{% block title %} Home {% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col md-12">
+      <div class="h-100 p-3 bg-light border rounded-3">
+        <h2>Manage Employees <button type="button" class="btn btn-outline-success float-end"
+          data-bs-toggle="modal" data-bs-target="#addmodal">Add New Employee</button></h2>
+
+        <table class="table table-hover table-dark">
+          <tr class="text-center">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Mobile No.</th>
+            <th>Email</th>
+            <th>SSS</th>
+            <th>Pag-IBIG</th>
+            <th>PhilHealth</th>
+            <th>Date Hired</th>
+            <th>Status</th>
+            <th>Remarks</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>01</td>
+            <td>test1</td>
+            <td>test1</td>
+            <td>0987654321</td>
+            <td>heythere@email.com</td>
+            <td>test1</td>
+            <td>test1</td>
+            <td>test1</td>
+            <td>test1</td>
+            <td>test1</td>
+            <td>test1</td>
+            <td><a href="" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#editmodal">Edit</a></td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>test2</td>
+            <td>test2</td>
+            <td>0912345678</td>
+            <td>dummymail@email.com</td>
+            <td>test2</td>
+            <td>test2</td>
+            <td>test2</td>
+            <td>test2</td>
+            <td>test2</td>
+            <td>test2</td>
+            <td><a href="" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#editmodal">Edit</a></td>
+          </tr>
+        </table>
+      </div>
+
+    <!-- Modal Add Employee-->
+    <div class="modal fade" id="addmodal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="addmodallabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header text-white bg-dark">
+              <h4 class="modal-title">Add Employee</h4>
+            </div>
+            <div class="modal-body">
+              <form action="" method="POST">
+                  <div class="form-group mb-3">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="name" required="1">
+                  </div>
+
+                  <div class="form-group mb-3">
+                    <label>Address</label>
+                    <input type="text" class="form-control" name="address" required="1">
+                  </div>
+
+                  <div class="form-group mb-3">
+                    <label>Mobile No.</label>
+                    <input type="number" class="form-control" name="mobile" required="1">
+                  </div>
+
+                  <div class="form-group mb-3">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email" required="1">
+                  </div>
+
+                  <div class="form-group mb-3">
+                    <label>SSS Number</label>
+                    <input type="number" class="form-control" name="SSS" required="1">
+                  </div>
+
+                  <div class="form-group mb-3">
+                    <label>Pag-IBIG Number</label>
+                    <input type="number" class="form-control" name="pagIBIG" required="1">
+                  </div>
+
+                  <div class="form-group mb-3">
+                    <label>PhilHealth Number</label>
+                    <input type="number" class="form-control" name="PhilHealth" required="1">
+                  </div>
+
+                  <div class="form-group mb-3">
+                    <label>Date Hired</label>
+                    <input type="date" class="form-control" name="hired" required="1">
+                  </div>
+
+                  <div class="form-group mb-3">
+                    <label>Status</label>
+                    <select class="form-select" aria-label="status">
+                      <option selected>Select Employee Status</option>
+                      <option value="active">Active</option>
+                      <option value="resigned">Resigned</option>
+                    </select>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label>Remarks:</label>
+                    <input type="text" class="form-control" name="remarks" required="1">
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <button class="btn btn-outline-success float-end p-3" type="submit">Add Employee</button>
+                  </div>
+                  <div>
+                    <button type="button" class="btn btn-outline-danger float-start p-3" data-bs-dismiss="modal">Cancel</button>
+                  </div>
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
